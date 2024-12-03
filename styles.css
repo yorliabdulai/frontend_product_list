@@ -146,6 +146,47 @@ button:hover {
     background-color: #2980b9;
 }
 
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+#checkoutForm button {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.modal .form-group.error input,
+.modal .form-group.error textarea {
+    border-color: red;
+}
+
+.form-group .error-message {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+}
 @media screen and (max-width: 768px) {
     header {
         flex-direction: column;
