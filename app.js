@@ -30,6 +30,18 @@ class ProductShop {
         this.renderProducts(products);
     }
 
+    /**
+     * Initializes event listeners for various elements in the product shop.
+     *
+     * @description
+     * Sets up event listeners for toggling the cart, searching products, handling
+     * product clicks, closing modals, showing the checkout modal, and processing
+     * the checkout form submission.
+     *
+     * @param {none} No parameters
+     *
+     * @returns {none}
+     */
     initEventListeners() {
         this.cartToggle.addEventListener('click', () => this.toggleCart());
         this.searchInput.addEventListener('input', (e) => this.searchProducts(e.target.value));
