@@ -285,6 +285,18 @@ class ProductShop {
         this.cartTotal.textContent = total.toFixed(2);
     }
 
+    /**
+     * Removes a product from the cart.
+     *
+     * @description
+     * Removes the product with the given ID from the cart. If the product has a
+     * quantity greater than 1, the quantity is decremented. Otherwise, the
+     * product is removed from the cart.
+     *
+     * @param {number} productId The ID of the product to remove from the cart.
+     *
+     * @returns {none}
+     */
     removeFromCart(productId) {
         const index = this.cart.findIndex(item => item.id === productId);
         if (index !== -1) {
