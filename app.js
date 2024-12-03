@@ -309,6 +309,16 @@ class ProductShop {
         }
     }
 
+    /**
+     * Toggles the visibility of the cart items.
+     *
+     * @description
+     * This method toggles the visibility of the cart items by changing their
+     * hidden attribute. It also updates the aria-expanded attribute of the
+     * cart toggle button to reflect the current visibility state.
+     *
+     * @returns {none}
+     */
     toggleCart() {
         const isHidden = this.cartItems.hidden;
         this.cartItems.hidden = !isHidden;
