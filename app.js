@@ -52,6 +52,18 @@ class ProductShop {
         this.checkoutForm.addEventListener('submit', (e) => this.processCheckout(e));
     }
 
+    /**
+     * Searches for products based on a query string.
+     *
+     * @description
+     * Searches for products based on a query string. The query is matched against
+     * the product name and category. If a match is found, the rendered products
+     * are updated to show only the matching products.
+     *
+     * @param {string} query The query string to search with.
+     *
+     * @returns {none}
+     */
     searchProducts(query) {
         const filteredProducts = products.filter(product => 
             product.name.toLowerCase().includes(query.toLowerCase()) ||
