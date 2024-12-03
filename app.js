@@ -11,6 +11,9 @@ class ProductShop {
         this.productModal = document.getElementById('productModal');
         this.productModalContent = document.getElementById('productModalContent');
         this.checkoutBtn = document.getElementById('checkoutBtn');
+        this.checkoutModal = document.getElementById('checkoutModal');
+        this.checkoutForm = document.getElementById('checkoutForm');
+        this.completeCheckoutBtn = document.getElementById('completeCheckoutBtn');
 
         this.initEventListeners();
         this.renderProducts(products);
@@ -21,7 +24,63 @@ class ProductShop {
         this.searchInput.addEventListener('input', (e) => this.searchProducts(e.target.value));
         this.productList.addEventListener('click', (e) => this.handleProductClick(e));
         this.productModal.addEventListener('click', (e) => this.handleModalClose(e));
-        this.checkoutBtn.addEventListener('click', () => this.checkout());
+        this.checkoutBtn.addEventListener('click', () => this.showCheckoutModal());
+        this.checkoutModal.addEventListener('click', (e) => this.handleModalClose(e));
+        this.checkoutForm.addEventListener('submit', (e) => this.processCheckout(e));
+    }
+
+    searchProducts(query) {
+        const filteredProducts = products.filter(product => 
+            product.name.toLowerCase().includes(query.toLowerCase()) ||
+            product.category.toLowerCase().includes(query.toLowerCase())
+        );
+        this.renderProducts(filteredProducts);
+    }
+
+    showCheckoutModal() {
+        if (this.cart.length === 0) {
+            alert('Your cart is empty!');
+            return;
+        }
+        this.checkoutModal.style.display = 'block';
+    }
+
+    processCheckout(e) {
+        e.preventDefault();
+        
+        // Basic form validation
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const address = document.getElementById('address');
+        const cardNumber = document.getElementById('cardNumber');
+        const expiry = document.getElementById('expiry');
+        const cvv = document.getElementById('cvv');
+
+        const validateField = (field) => {
+            const isValid = field.checkValidity();
+            field.parentElement.classList.toggle('error', !isValid);
+            return isValid;
+        };
+
+        const isFormValid = [
+            validateField(name),
+            validateField(email),
+            validateField(address),
+            validateField(cardNumber),
+            validateField(expiry),
+            validateField(cvv)
+        ].every(Boolean);
+
+        if (isFormValid) {
+            const total = this.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            alert(`Order Placed Successfully!\nTotal: $${total.toFixed(2)}\nThank you, ${name.value}!`);
+            
+        
+            this.cart = [];
+            this.updateCart();
+            this.checkoutForm.reset();
+            this.checkoutModal.style.display = 'none';
+        }
     }
 
     renderProducts(productsToRender) {
