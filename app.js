@@ -1,4 +1,15 @@
 class ProductShop {
+    /**
+     * Constructor for ProductShop
+     *
+     * @description
+     * Handles initial setup of the application by retrieving elements from the DOM
+     * and assigning event listeners to the necessary elements.
+     *
+     * @param {none} No parameters
+     *
+     * @returns {none}
+     */
     constructor() {
         this.cart = [];
         this.productList = document.getElementById('productList');
