@@ -197,6 +197,18 @@ class ProductShop {
         this.renderProducts(filteredProducts);
     }
 
+    /**
+     * Shows the product details modal for the given product ID.
+     *
+     * @description
+     * Retrieves the product from the products array based on the product ID and
+     * renders the product details in the product modal. The product modal is
+     * then displayed.
+     *
+     * @param {number} productId The ID of the product to show details for.
+     *
+     * @returns {none}
+     */
     showProductDetails(productId) {
         const product = products.find(p => p.id === productId);
         this.productModalContent.innerHTML = `
