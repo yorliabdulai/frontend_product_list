@@ -72,6 +72,15 @@ class ProductShop {
         this.renderProducts(filteredProducts);
     }
 
+    /**
+     * Shows the checkout modal if the cart is not empty.
+     *
+     * @description
+     * If the cart is empty, an alert is shown to the user. Otherwise, the
+     * checkout modal is displayed.
+     *
+     * @returns {none}
+     */
     showCheckoutModal() {
         if (this.cart.length === 0) {
             alert('Your cart is empty!');
