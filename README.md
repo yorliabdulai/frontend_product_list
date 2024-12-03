@@ -1,4 +1,4 @@
-# frontend_product_list# Product Shop Web Application
+# Product Shop Web Application
 
 ## Project Overview
 A responsive e-commerce web application for browsing and purchasing products with features like product search, cart management, and checkout functionality.
