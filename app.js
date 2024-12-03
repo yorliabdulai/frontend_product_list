@@ -222,6 +222,17 @@ class ProductShop {
         this.productModal.style.display = 'block';
     }
 
+    /**
+     * Handles the event of the product modal being closed.
+     *
+     * @description
+     * Checks if the event target is the product modal or the close button
+     * inside the product modal. If so, the product modal is hidden.
+     *
+     * @param {Event} e The event object from the event listener.
+     *
+     * @returns {none}
+     */
     handleModalClose(e) {
         if (e.target.classList.contains('modal') || 
             e.target.classList.contains('close-modal')) {
