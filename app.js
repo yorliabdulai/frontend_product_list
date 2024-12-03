@@ -325,7 +325,6 @@ class ProductShop {
         this.cartToggle.setAttribute('aria-expanded', !isHidden);
     }
 
-/*************  ✨ Codeium Command ⭐  *************/
     /**
      * Simulates a checkout process.
      *
@@ -337,7 +336,6 @@ class ProductShop {
      *
      * @returns {none}
      */
-/******  9bdb5e01-23ea-4b99-877f-3766e8d75101  *******/
     checkout() {
         if (this.cart.length === 0) {
             alert('Your cart is empty!');
