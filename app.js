@@ -325,6 +325,19 @@ class ProductShop {
         this.cartToggle.setAttribute('aria-expanded', !isHidden);
     }
 
+/*************  ✨ Codeium Command ⭐  *************/
+    /**
+     * Simulates a checkout process.
+     *
+     * @description
+     * Checks if the cart is empty. If it is, an alert is shown to the user.
+     * Otherwise, the total price of all items in the cart is calculated, and
+     * an alert is shown to the user with the total price. The cart is then
+     * emptied.
+     *
+     * @returns {none}
+     */
+/******  9bdb5e01-23ea-4b99-877f-3766e8d75101  *******/
     checkout() {
         if (this.cart.length === 0) {
             alert('Your cart is empty!');
