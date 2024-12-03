@@ -142,6 +142,20 @@ class ProductShop {
         }
     }
 
+    /**
+     * Renders the given array of products in the product list.
+     *
+     * @description
+     * This method will clear the existing product list and then render the given
+     * array of products. Each product is represented as a div with the class
+     * "product-card" and contains the product image, name, price, and two buttons
+     * to view the product details and add the product to the cart.
+     *
+     * @param {array} productsToRender An array of product objects to render in
+     * the product list.
+     *
+     * @returns {none}
+     */
     renderProducts(productsToRender) {
         this.productList.innerHTML = '';
         productsToRender.forEach(product => {
