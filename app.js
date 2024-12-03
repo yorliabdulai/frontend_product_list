@@ -89,6 +89,21 @@ class ProductShop {
         this.checkoutModal.style.display = 'block';
     }
 
+/*************  ✨ Codeium Command ⭐  *************/
+    /**
+     * Processes the checkout form submission.
+     *
+     * @description
+     * Processes the checkout form submission. The form is validated using the
+     * built-in form validation. If the form is valid, an alert is shown to the
+     * user confirming the order. The cart is then cleared and the checkout form
+     * is reset.
+     *
+     * @param {Event} e The form submission event.
+     *
+     * @returns {none}
+     */
+/******  7d5fab03-651c-41de-923c-797f5463bf23  *******/
     processCheckout(e) {
         e.preventDefault();
         
