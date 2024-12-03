@@ -225,20 +225,6 @@ class ProductShop {
         }
     }
 
-/*************  ✨ Codeium Command ⭐  *************/
-    /**
-     * Adds a product to the cart.
-     *
-     * @description
-     * Adds the product with the given ID to the cart. If the product is already
-     * in the cart, the quantity is incremented. Otherwise, the product is added
-     * to the cart with a quantity of 1.
-     *
-     * @param {number} productId The ID of the product to add to the cart.
-     *
-     * @returns {none}
-     */
-/******  c170b11e-f9f8-4439-baec-6596c8b8d678  *******/
     addToCart(productId) {
         const product = products.find(p => p.id === productId);
         const existingItem = this.cart.find(item => item.id === productId);
